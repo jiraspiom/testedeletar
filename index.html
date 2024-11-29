@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chatbot de Candidatura</title>
+<script src="https://unpkg.com/blip-chat-widget" type="text/javascript"></script>
+<script>
+
+      window.onload = function () {
+
+        // Cria a instância do Blip Chat
+
+        const blipChat = new BlipChat()
+
+          .withAppKey('cm90ZWFkb3Jnd2VrMToyMTg3OTk1ZC1iZDE4LTQ5M2UtOWZjMC04YTNlMmE3NmUwMjc=')
+
+          .withButton({ "color": "#868686", "icon": "" })
+
+          .withCustomCommonUrl('https://wallef-amarok-tm50p.chat.blip.ai/');
+ 
+        // Adiciona o evento de carregamento para enviar mensagem inicial
+
+        blipChat.withEventHandler(BlipChat.LOAD_EVENT, function () {
+
+          blipChat.sendMessage({
+
+            type: "text/plain",
+
+            content: "Olá! Estou vindo do site e gostaria de continuar me candidatar para a vaga de Desenvolvedor Full-Stack."
+
+          });
+
+        });
+ 
+        // Constrói o widget
+
+        blipChat.build();
+
+      };
+</script>
+</head>
+<body>
+<h1>Chatbot de Candidatura</h1>
+<p>O chatbot será carregado automaticamente.</p>
+</body>
+</html>
+ 
